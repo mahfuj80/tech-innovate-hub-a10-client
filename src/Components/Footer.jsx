@@ -70,7 +70,7 @@ const Footer = () => {
           <a className="link link-hover">Cookie policy</a>
         </nav>
       </footer>
-      <footer className="footer px-10 py-4 border-t bg-base-100 text-base-content border-base-200 hidden md:block">
+      <footer className="footer px-10 py-4 border-t-2 bg-base-100 text-base-content border-base-500 hidden md:block">
         <aside className="items-center grid-flow-col">
           <img className="w-12 h-11" src="/logo.png" alt="logo" />
           <p>
