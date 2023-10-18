@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const OurBrands = () => {
   const [brands, setBrands] = useState([]);
@@ -15,29 +16,27 @@ const OurBrands = () => {
     <div>
       <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 bg-gray-100">
         <div className="container mx-auto">
-          <p className="text-4xl text-center font-bold mb-16">
-            Add Your Product
-          </p>
+          <p className="text-4xl text-center font-bold mb-16">Our Brands</p>
           <div className="grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {brands.map((brand) => (
-              <div key={brand?._id}>
-                <div className="card bg-base-100 shadow-xl">
-                  <figure className="px-2 pt-2">
-                    <img
-                      src={brand.image}
-                      alt="Shoes"
-                      className="rounded-xl w-full"
-                    />
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    <h2 className="card-title">Shoes!</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions">
-                      <button className="btn btn-primary">Buy Now</button>
+              <Link key={brand?._id} to={`/brand/${brand.name}`}>
+                <div>
+                  <div className="card bg-base-100 shadow-sm hover:shadow-2xl cursor-pointer">
+                    <figure className="px-2 pt-2">
+                      <img
+                        src={brand.image}
+                        alt="Shoes"
+                        className="rounded-xl w-full"
+                      />
+                    </figure>
+                    <div className="card-body items-center text-center">
+                      <h2 className="text-3xl font-bold text-black">
+                        {brand?.name}
+                      </h2>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

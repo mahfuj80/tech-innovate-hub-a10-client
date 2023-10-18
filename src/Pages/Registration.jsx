@@ -71,9 +71,9 @@ const Registration = () => {
                   required
                 />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
+                  <button className="label-text-alt link link-hover">
                     Forgot password?
-                  </a>
+                  </button>
                 </label>
               </div>
               <div className="form-control mt-6">

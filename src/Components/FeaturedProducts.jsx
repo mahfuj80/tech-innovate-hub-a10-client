@@ -16,10 +16,7 @@ const FeaturedProducts = () => {
                 />
                 <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                   <h3>
-                    <a
-                      href="javascript:void(0)"
-                      className="mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                    >
+                    <a className="cursor-pointer mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]">
                       Track with Precision: Apple AirTag Spotlight!
                     </a>
                   </h3>
@@ -29,10 +26,7 @@ const FeaturedProducts = () => {
                     for your belongings
                   </p>
 
-                  <a
-                    href="javascript:void(0)"
-                    className="inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white"
-                  >
+                  <a className="cursor-pointer inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white">
                     View Details
                   </a>
                 </div>
@@ -47,10 +41,7 @@ const FeaturedProducts = () => {
                 />
                 <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                   <h3>
-                    <a
-                      href="javascript:void(0)"
-                      className="mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                    >
+                    <a className="cursor-pointer mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]">
                       Immerse in Sound: Sony AirPod Experience!
                     </a>
                   </h3>
@@ -60,10 +51,7 @@ const FeaturedProducts = () => {
                     for a music-filled day.
                   </p>
 
-                  <a
-                    href="javascript:void(0)"
-                    className="inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white"
-                  >
+                  <a className="cursor-pointer inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white">
                     View Details
                   </a>
                 </div>
@@ -78,10 +66,7 @@ const FeaturedProducts = () => {
                 />
                 <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                   <h3>
-                    <a
-                      href="javascript:void(0)"
-                      className="mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]"
-                    >
+                    <a className="cursor-pointer mb-4 block text-xl font-semibold text-dark hover:text-primary sm:text-[22px] md:text-xl lg:text-[22px] xl:text-xl 2xl:text-[22px]">
                       Powerful & Elegant: Discover Asus ZenBook Pro!
                     </a>
                   </h3>
@@ -91,10 +76,7 @@ const FeaturedProducts = () => {
                     wherever you go
                   </p>
 
-                  <a
-                    href="javascript:void(0)"
-                    className="inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white"
-                  >
+                  <a className="cursor-pointer inline-block rounded-full border border-[#E5E7EB] py-2 px-7 text-base font-medium text-body-color transition hover:border-primary hover:bg-primary hover:text-white">
                     View Details
                   </a>
                 </div>
