@@ -85,13 +85,13 @@ const Nav = () => {
                 className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
+                  <Link to={'/profile'} className="justify-between">
                     {user?.displayName}
                     <span className="badge">New</span>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <Link to={'/settings'}>Settings</Link>
                 </li>
                 <li>
                   {user && <button onClick={handleLogOut}>Log Out</button>}
