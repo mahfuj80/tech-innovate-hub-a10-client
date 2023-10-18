@@ -15,13 +15,13 @@ const Nav = () => {
   };
   const navLinks = (
     <>
-      <li>
+      <li className="font-bold">
         <NavLink to={'/'}>Home</NavLink>
       </li>
-      <li>
+      <li className="font-bold">
         <NavLink to={'/add-product'}>Add Product</NavLink>
       </li>
-      <li>
+      <li className="font-bold">
         <NavLink to={'/my-cart'}>My Cart</NavLink>
       </li>
     </>
@@ -29,10 +29,10 @@ const Nav = () => {
 
   const loginAndLogOutButton = (
     <>
-      <li>
+      <li className="font-bold">
         <NavLink to={'/login'}>Login</NavLink>
       </li>
-      <li>
+      <li className="font-bold">
         <NavLink to={'/register'}>Sign Up</NavLink>
       </li>
     </>
@@ -77,7 +77,7 @@ const Nav = () => {
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  <img src={user?.photoURL} alt="Profile_Image" />
                 </div>
               </label>
               <ul
@@ -86,7 +86,7 @@ const Nav = () => {
               >
                 <li>
                   <a className="justify-between">
-                    Profile
+                    {user?.displayName}
                     <span className="badge">New</span>
                   </a>
                 </li>

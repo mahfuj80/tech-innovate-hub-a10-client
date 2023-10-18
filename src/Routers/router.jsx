@@ -7,6 +7,8 @@ import AddProduct from '../Pages/AddProduct';
 import MyCart from '../Pages/MyCart';
 import Registration from '../Pages/Registration';
 import BrandProduct from '../Pages/BrandProduct';
+import Profile from '../Pages/Profile';
+import Settings from '../Pages/Settings';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: '/brand/:name',
         element: <BrandProduct></BrandProduct>,
+      },
+      {
+        path: '/profile',
+        element: <Profile></Profile>,
+      },
+      {
+        path: '/settings',
+        element: <Settings></Settings>,
       },
     ],
   },
