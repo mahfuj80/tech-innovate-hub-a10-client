@@ -3,12 +3,12 @@ import { initializeApp } from 'firebase/app';
 
 const all = import.meta.env;
 const firebaseConfig = {
-  apiKey: all.AUTH_APIKEY,
-  authDomain: all.AUTH_AUTHDOMAIN,
-  projectId: all.AUTH_PROJECTID,
-  storageBucket: all.AUTH_STORAGEBUCKET,
-  messagingSenderId: all.AUTH_MESSAGINGSENDERID,
-  appId: all.AUTH_APPID,
+  apiKey: all.VITE_APIKEY,
+  authDomain: all.VITE_AUTHDOMAIN,
+  projectId: all.VITE_PROJECTID,
+  storageBucket: all.VITE_STORAGEBUCKET,
+  messagingSenderId: all.VITE_MESSAGINGSENDERID,
+  appId: all.VITE_APPID,
 };
 
 // Initialize Firebase

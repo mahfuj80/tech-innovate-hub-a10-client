@@ -1,13 +1,35 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import useAuth from '../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+  const { googleSignIn } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
     console.log(email, password);
+  };
+
+  const handleGoogle = () => {
+    googleSignIn()
+      .then(() => {
+        // Signed in
+        Swal.fire('Logged In', 'You Successfully Logged In', 'success');
+        navigate(location?.state ? location.state : '/');
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'Error');
+        // ...
+      });
   };
   return (
     <div>
@@ -71,7 +93,10 @@ const Login = () => {
               <p className="text-xl font-bold mb-3">Sign in with</p>
               <div className="flex gap-4 items-center justify-center">
                 <button className="btn btn-primary">
-                  <FaGoogle className="text-2xl text-white"></FaGoogle>
+                  <FaGoogle
+                    onClick={handleGoogle}
+                    className="text-2xl text-white"
+                  ></FaGoogle>
                 </button>
                 <button className="btn btn-primary">
                   <FaGithub className="text-2xl text-white"></FaGithub>
