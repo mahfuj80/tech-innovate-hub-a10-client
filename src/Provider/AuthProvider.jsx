@@ -7,6 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from 'firebase/auth';
 import auth from '../Firebase/Firebase';
 export const AuthContext = createContext(null);
@@ -59,6 +60,7 @@ const AuthProvider = ({ children }) => {
     user,
     loginUser,
     createUser,
+    updateProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

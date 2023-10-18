@@ -1,6 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../Firebase/Firebase';
+import Swal from 'sweetalert2';
+import useAuth from '../hooks/useAuth';
+import { useEffect } from 'react';
 
 const Registration = () => {
+  const { user, createUser, updateProfile } = useAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate(location?.state ? location.state : '/');
+      console.log(location.state);
+      return;
+    }
+  }, [navigate, user]);
   const handleResister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -9,6 +22,28 @@ const Registration = () => {
     const email = form.get('email');
     const password = form.get('password');
     console.log(name, image, email, password);
+    createUser(email, password)
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: image,
+        })
+          .then(() => {
+            // Signed in
+            Swal.fire('Logged In', 'You Successfully Logged In', 'success');
+            navigate(location?.state ? location.state : '/');
+          })
+          .catch((error) => {
+            // Handle Errors here.
+            const errorMessage = error.message;
+            Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'error');
+          });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'error');
+      });
   };
   return (
     <div>
