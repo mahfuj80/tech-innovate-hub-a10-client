@@ -1,6 +1,18 @@
-import { Link, NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Nav = () => {
+  const { logOut, user } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    logOut();
+    // Logged out
+    Swal.fire('Logged Out', 'Log Out Success', 'success');
+    navigate('/');
+  };
   const navLinks = (
     <>
       <li>
@@ -12,6 +24,11 @@ const Nav = () => {
       <li>
         <NavLink to={'/my-cart'}>My Cart</NavLink>
       </li>
+    </>
+  );
+
+  const loginAndLogOutButton = (
+    <>
       <li>
         <NavLink to={'/login'}>Login</NavLink>
       </li>
@@ -56,30 +73,36 @@ const Nav = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
-            >
-              <li>
-                <a className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </a>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
+          {user ? (
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                    <span className="badge">New</span>
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  {user && <button onClick={handleLogOut}>Log Out</button>}
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <ul className="menu menu-horizontal px-1">
+              {loginAndLogOutButton}
             </ul>
-          </div>
+          )}
         </div>
       </div>
     </div>
