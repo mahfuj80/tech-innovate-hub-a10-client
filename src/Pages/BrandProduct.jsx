@@ -39,7 +39,7 @@ const BrandProduct = () => {
         >
           <Carousel
             data={data}
-            time={3000}
+            time={2000}
             width="full"
             height="500px"
             captionStyle={captionStyle}

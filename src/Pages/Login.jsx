@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-  const { googleSignIn, githubSignIn } = useAuth();
+  const { googleSignIn, githubSignIn, loginUser } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -13,7 +13,17 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get('email');
     const password = form.get('password');
-    console.log(email, password);
+    loginUser(email, password)
+      .then(() => {
+        // Signed in
+        Swal.fire('Logged In', 'You Successfully Logged In', 'success');
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'error');
+      });
   };
 
   const handleGoogle = () => {
