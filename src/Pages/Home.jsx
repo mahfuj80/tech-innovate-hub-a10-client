@@ -1,13 +1,13 @@
 import Banner from '../Components/Banner';
 import ContactUs from '../Components/ContactUs';
 import FeaturedProducts from '../Components/FeaturedProducts';
-import OurProducts from '../Components/OurProducts';
+import OurBrands from '../Components/OurBrands';
 
 const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <OurProducts></OurProducts>
+      <OurBrands></OurBrands>
       <FeaturedProducts></FeaturedProducts>
       <ContactUs></ContactUs>
     </div>

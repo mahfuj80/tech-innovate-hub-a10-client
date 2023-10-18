@@ -2,13 +2,13 @@ const FeaturedProducts = () => {
   return (
     <div>
       <section className="bg-[#F3F4F6] pt-20 pb-10 lg:pt-[100px] lg:pb-20">
-        <h2 className="text-center text-4xl pb-10 font-bold">
+        <h2 className="text-center text-4xl pb-16 font-bold">
           Featured Products
         </h2>
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap">
-            <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-              <div className="mb-10 overflow-hidden rounded-lg bg-white">
+            <div className="w-full px-4 md:w-1/2 xl:w-1/3 ">
+              <div className="mb-10 overflow-hidden rounded-lg bg-white hover:shadow-2xl">
                 <img
                   src="/apple-air-tag.png"
                   alt="image"
@@ -39,7 +39,7 @@ const FeaturedProducts = () => {
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-              <div className="mb-10 overflow-hidden rounded-lg bg-white">
+              <div className="mb-10 overflow-hidden rounded-lg bg-white hover:shadow-2xl">
                 <img
                   src="/sony-ear-buds.png"
                   alt="image"
@@ -70,7 +70,7 @@ const FeaturedProducts = () => {
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-              <div className="mb-10 overflow-hidden rounded-lg bg-white">
+              <div className="mb-10 overflow-hidden rounded-lg bg-white hover:shadow-2xl">
                 <img
                   src="/asus-zenbook.png"
                   alt="image"
