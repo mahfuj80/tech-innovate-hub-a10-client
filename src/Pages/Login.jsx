@@ -4,7 +4,7 @@ import useAuth from '../hooks/useAuth';
 import Swal from 'sweetalert2';
 
 const Login = () => {
-  const { googleSignIn } = useAuth();
+  const { googleSignIn, githubSignIn } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -22,13 +22,25 @@ const Login = () => {
         // Signed in
         Swal.fire('Logged In', 'You Successfully Logged In', 'success');
         navigate(location?.state ? location.state : '/');
-        // ...
       })
       .catch((error) => {
         // Handle Errors here.
         const errorMessage = error.message;
-        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'Error');
-        // ...
+        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'error');
+      });
+  };
+
+  const handleGithub = () => {
+    githubSignIn()
+      .then(() => {
+        // Signed in
+        Swal.fire('Logged In', 'You Successfully Logged In', 'success');
+        navigate(location?.state ? location.state : '/');
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorMessage = error.message;
+        Swal.fire('Something Went Wrong!!', `${errorMessage}`, 'error');
       });
   };
   return (
@@ -99,7 +111,10 @@ const Login = () => {
                   ></FaGoogle>
                 </button>
                 <button className="btn btn-primary">
-                  <FaGithub className="text-2xl text-white"></FaGithub>
+                  <FaGithub
+                    onClick={handleGithub}
+                    className="text-2xl text-white"
+                  ></FaGithub>
                 </button>
               </div>
             </div>
