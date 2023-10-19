@@ -4,13 +4,21 @@ import Swal from 'sweetalert2';
 const ProductDetails = () => {
   const product = useLoaderData();
   const handleAddToCart = () => {
-    console.log(product);
+    const cartProduct = {
+      name: product?.name,
+      description: product?.description,
+      image: product?.image,
+      brandName: product?.brandName,
+      type: product?.type,
+      price: product?.price,
+      rating: product?.rating,
+    };
     fetch('http://localhost:5000/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
       },
-      body: JSON.stringify(product),
+      body: JSON.stringify(cartProduct),
     })
       .then((res) => res.json())
       .then((data) => {
