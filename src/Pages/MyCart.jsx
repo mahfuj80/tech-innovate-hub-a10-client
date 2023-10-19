@@ -15,7 +15,6 @@ const MyCart = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.deletedCount) {
           Swal.fire({
             title: 'Success!',
@@ -23,6 +22,10 @@ const MyCart = () => {
             icon: 'success',
             confirmButtonText: 'Ok',
           });
+          const productsAfterDeleted = products.filter(
+            (product) => product?._id !== id
+          );
+          setProducts(productsAfterDeleted);
         }
       })
       .catch(() => {
