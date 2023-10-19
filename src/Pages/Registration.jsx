@@ -10,7 +10,6 @@ const Registration = () => {
   useEffect(() => {
     if (user) {
       navigate(location?.state ? location.state : '/');
-      console.log(location.state);
       return;
     }
   }, [navigate, user]);

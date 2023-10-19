@@ -3,7 +3,6 @@ import Swal from 'sweetalert2';
 
 const UpdateProduct = () => {
   const previousProduct = useLoaderData();
-  console.log(previousProduct);
   const handleUpdateProduct = (e) => {
     e.preventDefault();
 
@@ -49,7 +48,6 @@ const UpdateProduct = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data?.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
@@ -66,8 +64,7 @@ const UpdateProduct = () => {
           });
         }
       })
-      .catch((error) => {
-        console.error('Error:', error);
+      .catch(() => {
         // Handle the error here (e.g., show an error message to the user)
         Swal.fire({
           title: 'Error!',
