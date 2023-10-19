@@ -2,7 +2,6 @@ import { Carousel } from 'react-carousel-minimal';
 import PropTypes from 'prop-types';
 
 const BrandProductSlider = ({ banners }) => {
-  console.log('ys');
   const data = banners.map((banner) => ({
     image: banner.image,
     caption: banner.caption,

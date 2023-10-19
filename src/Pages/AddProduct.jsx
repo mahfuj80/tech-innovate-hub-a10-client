@@ -21,6 +21,22 @@ const AddProduct = () => {
       price,
       rating,
     };
+    const brandNames = brandName.toLowerCase();
+    console.log(brandNames);
+    if (
+      brandNames !== 'apple' &&
+      brandNames !== 'google' &&
+      brandNames !== 'asus' &&
+      brandNames !== 'intel' &&
+      brandNames !== 'samsung'
+    ) {
+      return Swal.fire({
+        title: 'Error!',
+        text: 'Brand Name Is Incorrect!!',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }
     fetch('http://localhost:5000/products', {
       method: 'POST',
       headers: {
@@ -57,6 +73,7 @@ const AddProduct = () => {
                   Product Name
                 </label>
                 <input
+                  required
                   name="name"
                   type="text"
                   placeholder="Please Enter Product Name Here..."
@@ -70,6 +87,7 @@ const AddProduct = () => {
                   Brand Name
                 </label>
                 <input
+                  required
                   name="brandName"
                   type="text"
                   placeholder="Please Enter Brand Name Here"
@@ -83,6 +101,7 @@ const AddProduct = () => {
                   Price
                 </label>
                 <input
+                  required
                   name="price"
                   type="text"
                   placeholder="Please Enter Product Price here.."
@@ -96,6 +115,7 @@ const AddProduct = () => {
                   Rating
                 </label>
                 <input
+                  required
                   name="rating"
                   type="text"
                   placeholder="Enter Product Rating"
@@ -109,6 +129,7 @@ const AddProduct = () => {
                   Type
                 </label>
                 <input
+                  required
                   name="type"
                   type="text"
                   placeholder="Product Type eg: phone, computer, headphone, etc"
@@ -135,6 +156,7 @@ const AddProduct = () => {
                   Image
                 </label>
                 <input
+                  required
                   name="image"
                   type="text"
                   placeholder="Image URL..."
@@ -145,6 +167,7 @@ const AddProduct = () => {
             <div className=" mx-auto px-4 w-4/5 md:w-2/3 lg:w-2/3 ">
               <div className="mb-12">
                 <input
+                  required
                   type="submit"
                   className="w-full cursor-pointer hover:bg-slate-400 bg-slate-300 rounded-lg border-[1.5px] border-form-stroke py-3 px-5 font-medium text-body-color placeholder-body-color outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-[#F5F7FD]"
                 />
