@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import BrandProductSlider from '../Components/BrandProductSlider';
 import BrandProductsCard from '../Components/BrandProductsCard';
+import NoProductFound from '../Components/NoProductFound';
 
 const BrandProduct = () => {
   const { name } = useParams();
@@ -34,13 +35,21 @@ const BrandProduct = () => {
 
   return (
     <>
-      <BrandProductSlider banners={banners}></BrandProductSlider>
-      {products.map((product) => (
-        <BrandProductsCard
-          key={product._id}
-          product={product}
-        ></BrandProductsCard>
-      ))}
+      {products.length > 0 ? (
+        <>
+          <BrandProductSlider banners={banners}></BrandProductSlider>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-20 px-20 bg-gray-100 gap-10">
+            {products.map((product) => (
+              <BrandProductsCard
+                key={product._id}
+                product={product}
+              ></BrandProductsCard>
+            ))}
+          </div>
+        </>
+      ) : (
+        <NoProductFound></NoProductFound>
+      )}
     </>
   );
 };
