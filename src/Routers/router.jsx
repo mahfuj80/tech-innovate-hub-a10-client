@@ -11,6 +11,7 @@ import Profile from '../Pages/Profile';
 import Settings from '../Pages/Settings';
 import UpdateProduct from '../Pages/UpdateProduct';
 import ProductDetails from '../Pages/ProductDetails';
+import PrivetRoutes from './PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -24,11 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-product',
-        element: <AddProduct></AddProduct>,
+        element: (
+          <PrivetRoutes>
+            <AddProduct></AddProduct>
+          </PrivetRoutes>
+        ),
       },
       {
         path: '/my-cart',
-        element: <MyCart></MyCart>,
+        element: (
+          <PrivetRoutes>
+            <MyCart></MyCart>
+          </PrivetRoutes>
+        ),
         loader: () => fetch('http://localhost:5000/cart'),
       },
       {
@@ -41,25 +50,45 @@ const router = createBrowserRouter([
       },
       {
         path: '/brand/:name',
-        element: <BrandProduct></BrandProduct>,
+        element: (
+          <PrivetRoutes>
+            <BrandProduct></BrandProduct>
+          </PrivetRoutes>
+        ),
       },
       {
         path: '/profile',
-        element: <Profile></Profile>,
+        element: (
+          <PrivetRoutes>
+            <Profile></Profile>
+          </PrivetRoutes>
+        ),
       },
       {
         path: '/settings',
-        element: <Settings></Settings>,
+        element: (
+          <PrivetRoutes>
+            <Settings></Settings>
+          </PrivetRoutes>
+        ),
       },
       {
         path: '/update-product/:id',
-        element: <UpdateProduct></UpdateProduct>,
+        element: (
+          <PrivetRoutes>
+            <UpdateProduct></UpdateProduct>
+          </PrivetRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/update-products/${params.id}`),
       },
       {
         path: '/details/:id',
-        element: <ProductDetails></ProductDetails>,
+        element: (
+          <PrivetRoutes>
+            <ProductDetails></ProductDetails>
+          </PrivetRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/update-products/${params.id}`),
       },

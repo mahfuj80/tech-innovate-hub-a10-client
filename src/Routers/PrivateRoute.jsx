@@ -1,6 +1,6 @@
 import { Navigate, useLocation } from 'react-router';
 import useAuth from '../hooks/useAuth';
-import { checkPropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 const PrivetRoutes = ({ children }) => {
   const { user, loading } = useAuth();
@@ -18,6 +18,6 @@ const PrivetRoutes = ({ children }) => {
 };
 
 PrivetRoutes.propTypes = {
-  children: checkPropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 export default PrivetRoutes;
