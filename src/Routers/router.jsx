@@ -10,6 +10,7 @@ import BrandProduct from '../Pages/BrandProduct';
 import Profile from '../Pages/Profile';
 import Settings from '../Pages/Settings';
 import UpdateProduct from '../Pages/UpdateProduct';
+import ProductDetails from '../Pages/ProductDetails';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,12 @@ const router = createBrowserRouter([
       {
         path: '/update-product/:id',
         element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/update-products/${params.id}`),
+      },
+      {
+        path: '/details/:id',
+        element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/update-products/${params.id}`),
       },

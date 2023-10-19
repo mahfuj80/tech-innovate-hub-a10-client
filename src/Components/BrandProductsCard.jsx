@@ -34,7 +34,7 @@ const BrandProductsCard = ({ product }) => {
 
           <div className="card-actions">
             <div className="flex justify-around w-full ">
-              <Link to={'/'}>
+              <Link to={`/details/${product?._id}`}>
                 <button className="btn bg-gray-200 hover:bg-gray-300">
                   Details
                 </button>
