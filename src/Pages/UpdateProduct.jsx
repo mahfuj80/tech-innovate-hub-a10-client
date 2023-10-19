@@ -53,7 +53,7 @@ const UpdateProduct = () => {
         if (data?.modifiedCount > 0) {
           Swal.fire({
             title: 'Success!',
-            text: 'Product Successfully Added',
+            text: 'Product Successfully Updated',
             icon: 'success',
             confirmButtonText: 'OK',
           });
