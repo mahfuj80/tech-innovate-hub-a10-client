@@ -1,4 +1,5 @@
 import { Carousel } from 'react-carousel-minimal';
+import PropTypes from 'prop-types';
 
 const BrandProductSlider = ({ banners }) => {
   console.log('ys');
@@ -49,4 +50,7 @@ const BrandProductSlider = ({ banners }) => {
   );
 };
 
+BrandProductSlider.propTypes = {
+  banners: PropTypes.array.isRequired,
+};
 export default BrandProductSlider;
