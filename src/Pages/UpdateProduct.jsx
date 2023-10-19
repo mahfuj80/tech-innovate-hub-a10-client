@@ -38,6 +38,7 @@ const UpdateProduct = () => {
         icon: 'error',
         confirmButtonText: 'Ok',
       });
+    }
     fetch(`http://localhost:5000/update-products/${previousProduct?._id}`, {
       method: 'PUT',
       headers: {
