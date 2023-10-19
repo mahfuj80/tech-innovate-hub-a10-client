@@ -13,7 +13,7 @@ const ProductDetails = () => {
       price: product?.price,
       rating: product?.rating,
     };
-    fetch('http://localhost:5000/cart', {
+    fetch('https://tech-innovate-hub-a10-server-16flih61x.vercel.app/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

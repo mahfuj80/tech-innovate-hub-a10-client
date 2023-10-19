@@ -10,7 +10,7 @@ const BrandProduct = () => {
   const [banners, setBanners] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/banners')
+    fetch('https://tech-innovate-hub-a10-server-16flih61x.vercel.app/banners')
       .then((res) => res.json())
       .then((fetchedBanners) => {
         // Filter banners based on the provided name
@@ -22,7 +22,9 @@ const BrandProduct = () => {
   }, [name]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${name}`)
+    fetch(
+      `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/products/${name}`
+    )
       .then((res) => res.json())
       .then((fetchedProducts) => {
         // Filter Products based on the provided name

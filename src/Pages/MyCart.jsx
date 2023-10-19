@@ -10,9 +10,12 @@ const MyCart = () => {
   }, [loadingProducts]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/cart/${id}`, {
-      method: 'DELETE',
-    })
+    fetch(
+      `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/cart/${id}`,
+      {
+        method: 'DELETE',
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.deletedCount) {

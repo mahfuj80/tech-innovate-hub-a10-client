@@ -37,13 +37,16 @@ const AddProduct = () => {
         confirmButtonText: 'Ok',
       });
     }
-    fetch('http://localhost:5000/products', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(productInfo),
-    })
+    fetch(
+      'https://tech-innovate-hub-a10-server-16flih61x.vercel.app/products',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(productInfo),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
