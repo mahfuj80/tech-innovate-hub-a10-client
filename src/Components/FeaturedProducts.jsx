@@ -1,7 +1,7 @@
 const FeaturedProducts = () => {
   return (
     <div>
-      <section className="bg-[#F3F4F6] pt-20 pb-10 lg:pt-[100px] lg:pb-20">
+      <section className="bg-[#F3F4F6] px-8 pt-20 pb-10 lg:pt-[100px] lg:pb-20">
         <h2 className="text-center text-4xl pb-16 font-bold">
           Featured Products
         </h2>

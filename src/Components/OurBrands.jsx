@@ -11,10 +11,9 @@ const OurBrands = () => {
       });
   }, []);
 
-  console.log(brands);
   return (
     <div>
-      <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 bg-gray-100">
+      <section className="pt-20 px-8 pb-10 lg:pt-[120px] lg:pb-20 bg-gray-100">
         <div className="container mx-auto">
           <p className="text-4xl text-center font-bold mb-16">Our Brands</p>
           <div className="grid gap-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

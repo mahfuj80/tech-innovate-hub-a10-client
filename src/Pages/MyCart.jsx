@@ -5,7 +5,6 @@ import Swal from 'sweetalert2';
 const MyCart = () => {
   const loadingProducts = useLoaderData();
   const [products, setProducts] = useState([]);
-  console.log(products.length);
   useEffect(() => {
     setProducts(loadingProducts);
   }, [loadingProducts]);
