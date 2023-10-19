@@ -15,7 +15,6 @@ const UpdateProduct = () => {
     const price = form?.price?.value;
     const description = form?.description?.value;
     const rating = form?.rating?.value;
-    console.log(name, description, image, brandName, type, price, rating);
     const updatedValue = {
       name,
       description,
@@ -25,6 +24,20 @@ const UpdateProduct = () => {
       price,
       rating,
     };
+    const brandNames = brandName.toLowerCase();
+    if (
+      brandNames !== 'apple' &&
+      brandNames !== 'google' &&
+      brandNames !== 'asus' &&
+      brandNames !== 'intel' &&
+      brandNames !== 'samsung'
+    ) {
+      return Swal.fire({
+        title: 'Error!',
+        text: 'Brand Name Is Incorrect!!',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
     fetch(`http://localhost:5000/update-products/${previousProduct?._id}`, {
       method: 'PUT',
       headers: {
@@ -41,6 +54,13 @@ const UpdateProduct = () => {
             text: 'Product Successfully Added',
             icon: 'success',
             confirmButtonText: 'OK',
+          });
+        } else if (data?.modifiedCount == 0) {
+          Swal.fire({
+            title: 'Error',
+            text: 'You do not made any changes',
+            icon: 'error',
+            confirmButtonText: 'Retry',
           });
         }
       })
@@ -72,6 +92,7 @@ const UpdateProduct = () => {
                   Product Name
                 </label>
                 <input
+                  required
                   defaultValue={previousProduct?.name}
                   name="name"
                   type="text"
@@ -86,6 +107,7 @@ const UpdateProduct = () => {
                   Brand Name
                 </label>
                 <input
+                  required
                   defaultValue={previousProduct?.brandName}
                   name="brandName"
                   type="text"
@@ -100,6 +122,7 @@ const UpdateProduct = () => {
                   Price
                 </label>
                 <input
+                  required
                   defaultValue={previousProduct?.price}
                   name="price"
                   type="text"
@@ -114,6 +137,7 @@ const UpdateProduct = () => {
                   Rating
                 </label>
                 <input
+                  required
                   defaultValue={previousProduct?.rating}
                   name="rating"
                   type="text"
@@ -128,6 +152,7 @@ const UpdateProduct = () => {
                   Type
                 </label>
                 <input
+                  required
                   name="type"
                   type="text"
                   placeholder="Product Type eg: phone, computer, headphone, etc"
@@ -141,6 +166,7 @@ const UpdateProduct = () => {
                   Short Description
                 </label>
                 <textarea
+                  required
                   defaultValue={previousProduct?.description}
                   name="description"
                   type="text"
@@ -155,6 +181,7 @@ const UpdateProduct = () => {
                   Image
                 </label>
                 <input
+                  required
                   defaultValue={previousProduct?.image}
                   name="image"
                   type="text"

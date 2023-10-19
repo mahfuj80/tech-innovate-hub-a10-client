@@ -22,7 +22,6 @@ const AddProduct = () => {
       rating,
     };
     const brandNames = brandName.toLowerCase();
-    console.log(brandNames);
     if (
       brandNames !== 'apple' &&
       brandNames !== 'google' &&
