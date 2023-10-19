@@ -36,17 +36,22 @@ const BrandProduct = () => {
   return (
     <>
       {products.length > 0 ? (
-        <>
+        <div>
           <BrandProductSlider banners={banners}></BrandProductSlider>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-20 px-20 bg-gray-100 gap-10">
-            {products.map((product) => (
-              <BrandProductsCard
-                key={product._id}
-                product={product}
-              ></BrandProductsCard>
-            ))}
+          <div className=" bg-gray-100 py-20 px-10">
+            <h1 className="my-16 text-4xl font-bold text-black text-center">
+              {name} Products
+            </h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 ">
+              {products.map((product) => (
+                <BrandProductsCard
+                  key={product._id}
+                  product={product}
+                ></BrandProductsCard>
+              ))}
+            </div>
           </div>
-        </>
+        </div>
       ) : (
         <NoProductFound></NoProductFound>
       )}

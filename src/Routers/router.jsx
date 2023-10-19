@@ -9,6 +9,7 @@ import Registration from '../Pages/Registration';
 import BrandProduct from '../Pages/BrandProduct';
 import Profile from '../Pages/Profile';
 import Settings from '../Pages/Settings';
+import UpdateProduct from '../Pages/UpdateProduct';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,12 @@ const router = createBrowserRouter([
       {
         path: '/settings',
         element: <Settings></Settings>,
+      },
+      {
+        path: '/update-product/:id',
+        element: <UpdateProduct></UpdateProduct>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/update-products/${params.id}`),
       },
     ],
   },

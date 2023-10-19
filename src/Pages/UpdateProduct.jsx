@@ -1,4 +1,9 @@
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 const UpdateProduct = () => {
+  const previousProduct = useLoaderData();
+  console.log(previousProduct);
   const handleUpdateProduct = (e) => {
     e.preventDefault();
 
@@ -11,6 +16,44 @@ const UpdateProduct = () => {
     const description = form?.description?.value;
     const rating = form?.rating?.value;
     console.log(name, description, image, brandName, type, price, rating);
+    const updatedValue = {
+      name,
+      description,
+      image,
+      brandName,
+      type,
+      price,
+      rating,
+    };
+    fetch(`http://localhost:5000/update-products/${previousProduct?._id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updatedValue),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data?.modifiedCount > 0) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product Successfully Added',
+            icon: 'success',
+            confirmButtonText: 'OK',
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle the error here (e.g., show an error message to the user)
+        Swal.fire({
+          title: 'Error!',
+          text: 'Failed to update the product',
+          icon: 'error',
+          confirmButtonText: 'OK',
+        });
+      });
   };
   return (
     <div>
@@ -29,6 +72,7 @@ const UpdateProduct = () => {
                   Product Name
                 </label>
                 <input
+                  defaultValue={previousProduct?.name}
                   name="name"
                   type="text"
                   placeholder="Please Enter Product Name Here..."
@@ -42,6 +86,7 @@ const UpdateProduct = () => {
                   Brand Name
                 </label>
                 <input
+                  defaultValue={previousProduct?.brandName}
                   name="brandName"
                   type="text"
                   placeholder="Please Enter Brand Name Here"
@@ -55,6 +100,7 @@ const UpdateProduct = () => {
                   Price
                 </label>
                 <input
+                  defaultValue={previousProduct?.price}
                   name="price"
                   type="text"
                   placeholder="Please Enter Product Price here.."
@@ -68,6 +114,7 @@ const UpdateProduct = () => {
                   Rating
                 </label>
                 <input
+                  defaultValue={previousProduct?.rating}
                   name="rating"
                   type="text"
                   placeholder="Enter Product Rating"
@@ -94,6 +141,7 @@ const UpdateProduct = () => {
                   Short Description
                 </label>
                 <textarea
+                  defaultValue={previousProduct?.description}
                   name="description"
                   type="text"
                   placeholder="Enter Short Description Here.."
@@ -107,6 +155,7 @@ const UpdateProduct = () => {
                   Image
                 </label>
                 <input
+                  defaultValue={previousProduct?.image}
                   name="image"
                   type="text"
                   placeholder="Image URL..."
@@ -118,7 +167,8 @@ const UpdateProduct = () => {
               <div className="mb-12">
                 <input
                   type="submit"
-                  className="w-full cursor-pointer hover:bg-slate-400 bg-slate-300 rounded-lg border-[1.5px] border-form-stroke py-3 px-5 font-medium text-body-color placeholder-body-color outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-[#F5F7FD]"
+                  value={'Update'}
+                  className="w-full cursor-pointer hover:bg-slate-400 bg-slate-300 rounded-lg border-[1.5px] border-form-stroke py-3 px-5 font-bold text-body-color placeholder-body-color outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-[#F5F7FD]"
                 />
               </div>
             </div>
