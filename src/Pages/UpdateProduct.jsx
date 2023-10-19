@@ -30,7 +30,8 @@ const UpdateProduct = () => {
       brandNames !== 'google' &&
       brandNames !== 'asus' &&
       brandNames !== 'intel' &&
-      brandNames !== 'samsung'
+      brandNames !== 'samsung' &&
+      brandNames !== 'sony'
     ) {
       return Swal.fire({
         title: 'Error!',
@@ -154,6 +155,7 @@ const UpdateProduct = () => {
                 </label>
                 <input
                   required
+                  defaultValue={previousProduct?.type}
                   name="type"
                   type="text"
                   placeholder="Product Type eg: phone, computer, headphone, etc"

@@ -27,7 +27,8 @@ const AddProduct = () => {
       brandNames !== 'google' &&
       brandNames !== 'asus' &&
       brandNames !== 'intel' &&
-      brandNames !== 'samsung'
+      brandNames !== 'samsung' &&
+      brandNames !== 'sony'
     ) {
       return Swal.fire({
         title: 'Error!',
