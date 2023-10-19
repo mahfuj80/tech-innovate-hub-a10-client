@@ -1,10 +1,38 @@
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ProductDetails = () => {
   const product = useLoaderData();
   const handleAddToCart = () => {
-    console.log('Add to cart Button Clicked');
+    console.log(product);
+    fetch('http://localhost:5000/cart', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Product Successfully Added',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          });
+        }
+      })
+      .catch(() => {
+        Swal.fire({
+          title: 'Error!',
+          text: 'Something Went Wrong!!',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
+      });
   };
+
   return (
     <div className="px-5 py-7 bg-gray-100 rounded-lg">
       <h2 className="text-center py-16 text-4xl font-bold">Product Details</h2>
