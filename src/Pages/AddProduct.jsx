@@ -37,16 +37,13 @@ const AddProduct = () => {
         confirmButtonText: 'Ok',
       });
     }
-    fetch(
-      'https://tech-innovate-hub-a10-server-9pvdv2erv.vercel.app/products',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(productInfo),
-      }
-    )
+    fetch('https://tech-innovate-hub-a10-server.vercel.app/products', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(productInfo),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.acknowledged) {
