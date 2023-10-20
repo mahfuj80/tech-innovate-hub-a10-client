@@ -76,7 +76,7 @@ const UpdateProduct = () => {
   };
   return (
     <div>
-      <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 bg-gray-100">
+      <section className="pt-20 pb-10 lg:pt-[120px] lg:pb-20 bg-gray-100 dark:bg-gray-950">
         <div className="container mx-auto">
           <p className="text-4xl text-center font-bold mb-16">
             Update Your Product

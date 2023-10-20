@@ -46,7 +46,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="px-5 py-7 bg-gray-100 rounded-lg">
+    <div className="px-5 py-7 bg-gray-100 dark:bg-gray-950 rounded-lg">
       <h2 className="text-center py-16 text-4xl font-bold">Product Details</h2>
       <div className="flex flex-col gap-8 md:flex-row">
         <div className=" w-full md:w-1/2 flex items-center justify-center">

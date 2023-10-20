@@ -41,7 +41,7 @@ const MyCart = () => {
   return (
     <>
       {products?.length > 0 ? (
-        <div className="py-10 bg-gray-100 rounded-lg">
+        <div className="py-10 bg-gray-100 dark:bg-black rounded-lg">
           <h2 className="text-4xl text-center my-16 font-bold">
             Product You Added To Cart
           </h2>
