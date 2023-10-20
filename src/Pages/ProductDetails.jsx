@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Provider/AuthProvider';
 
 const ProductDetails = () => {
+  const { user } = useContext(AuthContext);
   const product = useLoaderData();
   const handleAddToCart = () => {
     const cartProduct = {
+      email: user?.email,
       name: product?.name,
       description: product?.description,
       image: product?.image,
@@ -13,7 +17,7 @@ const ProductDetails = () => {
       price: product?.price,
       rating: product?.rating,
     };
-    fetch('https://tech-innovate-hub-a10-server-puml71law.vercel.app/cart', {
+    fetch('http://localhost:5000/cart', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

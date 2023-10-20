@@ -10,12 +10,9 @@ const MyCart = () => {
   }, [loadingProducts]);
 
   const handleDelete = (id) => {
-    fetch(
-      `https://tech-innovate-hub-a10-server-puml71law.vercel.app/cart/${id}`,
-      {
-        method: 'DELETE',
-      }
-    )
+    fetch(`http://localhost:5000/cart/${id}`, {
+      method: 'DELETE',
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data?.deletedCount) {
@@ -43,13 +40,13 @@ const MyCart = () => {
 
   return (
     <>
-      {products.length > 0 ? (
+      {products?.length > 0 ? (
         <div className="py-10 bg-gray-100 rounded-lg">
           <h2 className="text-4xl text-center my-16 font-bold">
             Product You Added To Cart
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8">
-            {products.map((product) => (
+            {products?.map((product) => (
               <div key={product?._id}>
                 <div className="card flex-col card-side md:flex-row bg-base-100 hover:shadow-2xl shadow-lg md:px-6">
                   <figure>

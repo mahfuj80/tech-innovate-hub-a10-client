@@ -22,7 +22,7 @@ const Nav = () => {
         <NavLink to={'/add-product'}>Add Product</NavLink>
       </li>
       <li className="font-bold">
-        <NavLink to={'/my-cart'}>My Cart</NavLink>
+        <NavLink to={`/my-cart/${user?.email}`}>My Cart</NavLink>
       </li>
     </>
   );

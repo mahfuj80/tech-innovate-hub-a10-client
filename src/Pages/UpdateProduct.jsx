@@ -39,16 +39,13 @@ const UpdateProduct = () => {
         confirmButtonText: 'Ok',
       });
     }
-    fetch(
-      `https://tech-innovate-hub-a10-server-puml71law.vercel.app/update-products/${previousProduct?._id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(updatedValue),
-      }
-    )
+    fetch(`http://localhost:5000/update-products/${previousProduct?._id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updatedValue),
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data?.modifiedCount > 0) {
