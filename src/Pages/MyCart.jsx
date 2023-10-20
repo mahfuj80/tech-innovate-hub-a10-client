@@ -11,7 +11,7 @@ const MyCart = () => {
 
   const handleDelete = (id) => {
     fetch(
-      `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/cart/${id}`,
+      `https://tech-innovate-hub-a10-server-puml71law.vercel.app/cart/${id}`,
       {
         method: 'DELETE',
       }

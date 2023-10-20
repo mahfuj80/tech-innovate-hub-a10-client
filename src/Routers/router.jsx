@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         ),
         loader: () =>
           fetch(
-            'https://tech-innovate-hub-a10-server-16flih61x.vercel.app/cart'
+            'https://tech-innovate-hub-a10-server-puml71law.vercel.app/cart'
           ),
       },
       {
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/update-products/${params.id}`
+            `https://tech-innovate-hub-a10-server-puml71law.vercel.app/update-products/${params.id}`
           ),
       },
       {
@@ -92,7 +92,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/update-products/${params.id}`
+            `https://tech-innovate-hub-a10-server-puml71law.vercel.app/update-products/${params.id}`
           ),
       },
     ],

@@ -38,7 +38,7 @@ const AddProduct = () => {
       });
     }
     fetch(
-      'https://tech-innovate-hub-a10-server-16flih61x.vercel.app/products',
+      'https://tech-innovate-hub-a10-server-puml71law.vercel.app/products',
       {
         method: 'POST',
         headers: {

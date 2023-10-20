@@ -40,7 +40,7 @@ const UpdateProduct = () => {
       });
     }
     fetch(
-      `https://tech-innovate-hub-a10-server-16flih61x.vercel.app/update-products/${previousProduct?._id}`,
+      `https://tech-innovate-hub-a10-server-puml71law.vercel.app/update-products/${previousProduct?._id}`,
       {
         method: 'PUT',
         headers: {
