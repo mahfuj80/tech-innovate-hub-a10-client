@@ -1,9 +1,15 @@
 const DarkWhite = () => {
-  const handleDarkWhiteButton = () => {
+  const handleDarkWhiteButton = (e) => {
     const htmlElement = document.querySelector('html');
-    const currentTheme = htmlElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    htmlElement.setAttribute('data-theme', newTheme);
+    //     const isDark = htmlElement.classList.value;
+    if (e.target.checked) {
+      localStorage.theme = 'light';
+      htmlElement.classList.add('dark');
+      htmlElement.setAttribute('data-theme', 'dark');
+    } else {
+      htmlElement.classList.remove('dark');
+      htmlElement.setAttribute('data-theme', 'light');
+    }
   };
   return (
     <div onClick={handleDarkWhiteButton}>

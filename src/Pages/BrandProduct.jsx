@@ -38,8 +38,8 @@ const BrandProduct = () => {
       {products.length > 0 ? (
         <div>
           <BrandProductSlider banners={banners}></BrandProductSlider>
-          <div className=" bg-gray-100 py-20 px-10">
-            <h1 className="my-16 text-4xl font-bold text-black text-center">
+          <div className=" bg-gray-100 dark:bg-black py-20 px-10">
+            <h1 className="my-16 text-4xl font-bold text-black text-center dark:text-white">
               {name} Products
             </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-5 ">

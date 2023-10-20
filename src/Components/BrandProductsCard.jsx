@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const BrandProductsCard = ({ product }) => {
   return (
     <div>
-      <div className="card bg-base-100 shadow-sm hover:shadow-2xl">
+      <div className="card bg-base-100 shadow-sm hover:shadow-2xl dark:shadow-white">
         <figure className="px-2 pt-2">
           <img
             src={product?.image}

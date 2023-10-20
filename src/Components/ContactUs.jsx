@@ -1,7 +1,7 @@
 const ContactUs = () => {
   return (
     <div>
-      <section className="relative z-10 px-8 overflow-hidden   bg-[#F3F4F6] py-16  lg:py-[80px]">
+      <section className="relative z-10 px-8 overflow-hidden bg-[#F3F4F6] dark:bg-gray-900 py-16  lg:py-[80px]">
         <h2 className="font-bold text-4xl text-center mb-20">Contact Us</h2>
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
