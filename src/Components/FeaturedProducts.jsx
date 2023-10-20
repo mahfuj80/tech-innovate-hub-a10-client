@@ -33,7 +33,7 @@ const FeaturedProducts = () => {
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-              <div className="mb-10 overflow-hidden rounded-lg bg-white hover:shadow-2xl">
+              <div className="mb-10 overflow-hidden rounded-lg bg-white  hover:shadow-2xl">
                 <img
                   src="/sony-ear-buds.png"
                   alt="image"
@@ -58,11 +58,11 @@ const FeaturedProducts = () => {
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 xl:w-1/3">
-              <div className="mb-10 overflow-hidden rounded-lg bg-white hover:shadow-2xl">
+              <div className="mb-10 overflow-hidden rounded-lg bg-white  hover:shadow-2xl">
                 <img
                   src="/asus-zenbook.png"
                   alt="image"
-                  className="h-64 w-full"
+                  className="h-64 w-full bg-gray-100"
                 />
                 <div className="p-8 text-center sm:p-9 md:p-7 xl:p-9">
                   <h3>
