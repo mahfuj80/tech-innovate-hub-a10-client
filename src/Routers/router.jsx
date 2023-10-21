@@ -32,16 +32,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/my-cart/:email',
+        path: 'my-cart/:email',
         element: (
           <PrivetRoutes>
             <MyCart></MyCart>
           </PrivetRoutes>
         ),
-        loader: ({ params }) =>
-          fetch(
-            `https://tech-innovate-hub-a10-server.vercel.app/cart/${params?.email}`
-          ),
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/cart/${params.email}`),
       },
       {
         path: '/login',
@@ -79,9 +77,7 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://tech-innovate-hub-a10-server.vercel.app/update-products/${params.id}`
-          ),
+          fetch(`http://localhost:5000/update-products/${params.id}`),
       },
       {
         path: '/details/:id',
@@ -91,9 +87,7 @@ const router = createBrowserRouter([
           </PrivetRoutes>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://tech-innovate-hub-a10-server.vercel.app/update-products/${params.id}`
-          ),
+          fetch(`http://localhost:5000/update-products/${params.id}`),
       },
     ],
   },

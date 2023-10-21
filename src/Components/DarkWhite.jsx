@@ -1,22 +1,41 @@
+import { useEffect, useState } from 'react';
+
 const DarkWhite = () => {
-  const handleDarkWhiteButton = (e) => {
-    const htmlElement = document.querySelector('html');
-    //     const isDark = htmlElement.classList.value;
-    if (e.target.checked) {
-      localStorage.theme = 'light';
-      htmlElement.classList.add('dark');
+  // Initialize the state based on the user's system preference
+  const prefersDark =
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDark, setIsDark] = useState(prefersDark);
+  const htmlElement = document.querySelector('html');
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
       htmlElement.setAttribute('data-theme', 'dark');
+      localStorage.theme = 'dark';
     } else {
-      htmlElement.classList.remove('dark');
+      document.documentElement.classList.remove('dark');
       htmlElement.setAttribute('data-theme', 'light');
+      localStorage.theme = 'light';
     }
+  }, [isDark, htmlElement]);
+
+  const handleDarkWhiteButton = (e) => {
+    // Toggle the state based on the checkbox value
+    setIsDark(e.target.checked);
   };
+
   return (
     <div onClick={handleDarkWhiteButton}>
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" />
 
+        <input
+          type="checkbox"
+          checked={isDark}
+          onChange={handleDarkWhiteButton}
+        />
         {/* sun icon */}
         <svg
           className="swap-on fill-current w-10 h-10"
@@ -38,5 +57,4 @@ const DarkWhite = () => {
     </div>
   );
 };
-
 export default DarkWhite;

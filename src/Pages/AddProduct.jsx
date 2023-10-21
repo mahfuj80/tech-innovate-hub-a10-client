@@ -37,7 +37,7 @@ const AddProduct = () => {
         confirmButtonText: 'Ok',
       });
     }
-    fetch('https://tech-innovate-hub-a10-server.vercel.app/products', {
+    fetch('http://localhost:5000/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

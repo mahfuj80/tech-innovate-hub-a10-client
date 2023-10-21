@@ -3,14 +3,14 @@ import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyCart = () => {
-  const loadingProducts = useLoaderData();
   const [products, setProducts] = useState([]);
+  const loadingProducts = useLoaderData();
   useEffect(() => {
     setProducts(loadingProducts);
   }, [loadingProducts]);
 
   const handleDelete = (id) => {
-    fetch(`https://tech-innovate-hub-a10-server.vercel.app/cart/${id}`, {
+    fetch(`http://localhost:5000/cart/${id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
@@ -51,7 +51,7 @@ const MyCart = () => {
                 <div className="card flex-col card-side md:flex-row bg-base-100 hover:shadow-2xl shadow-lg md:px-6">
                   <figure>
                     <img
-                      className="w-[200px] pt-8 md:pt-0 md:w-full"
+                      className="w-[200px] pt-8 md:pt-0"
                       src={product?.image}
                       alt="Product Image"
                     />
