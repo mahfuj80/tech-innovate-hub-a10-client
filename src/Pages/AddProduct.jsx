@@ -37,7 +37,7 @@ const AddProduct = () => {
         confirmButtonText: 'Ok',
       });
     }
-    fetch('http://localhost:5000/products', {
+    fetch('https://tech-innovate-hub-a10-server.vercel.app/products', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -69,7 +69,7 @@ const AddProduct = () => {
           >
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Product Name
                 </label>
                 <input
@@ -83,7 +83,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Brand Name
                 </label>
                 <input
@@ -97,7 +97,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Price
                 </label>
                 <input
@@ -111,7 +111,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Rating
                 </label>
                 <input
@@ -125,7 +125,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Type
                 </label>
                 <input
@@ -139,7 +139,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/2">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Short Description
                 </label>
                 <textarea
@@ -152,7 +152,7 @@ const AddProduct = () => {
             </div>
             <div className="w-full px-4 md:w-1/1 lg:w-1/1">
               <div className="mb-12">
-                <label className="mb-3 block text-base font-medium text-black">
+                <label className="mb-3 block text-base font-medium text-black dark:text-white">
                   Image
                 </label>
                 <input
@@ -169,7 +169,7 @@ const AddProduct = () => {
                 <input
                   required
                   type="submit"
-                  className="w-full cursor-pointer hover:bg-slate-400 bg-slate-300 rounded-lg border-[1.5px] border-form-stroke py-3 px-5 font-medium text-body-color placeholder-body-color outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-[#F5F7FD]"
+                  className="w-full dark:text-white cursor-pointer hover:bg-slate-400 bg-slate-300 rounded-lg border-[1.5px] border-form-stroke py-3 px-5 font-medium text-body-color placeholder-body-color outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-[#F5F7FD]"
                 />
               </div>
             </div>

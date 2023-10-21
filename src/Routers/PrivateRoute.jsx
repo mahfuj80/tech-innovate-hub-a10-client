@@ -6,9 +6,7 @@ const PrivetRoutes = ({ children }) => {
   const { user, loading } = useAuth();
   const location = useLocation();
   if (loading) {
-    return (
-      <span className="loading loading-infinity loading-lg  mx-auto py-80 "></span>
-    );
+    return <span className="loading loading-infinity loading-lg "></span>;
   }
   if (user) {
     return children;

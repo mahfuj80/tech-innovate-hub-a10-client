@@ -3,14 +3,14 @@ import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const MyCart = () => {
-  const [products, setProducts] = useState([]);
   const loadingProducts = useLoaderData();
+  const [products, setProducts] = useState([]);
   useEffect(() => {
     setProducts(loadingProducts);
   }, [loadingProducts]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/cart/${id}`, {
+    fetch(`https://tech-innovate-hub-a10-server.vercel.app/cart/${id}`, {
       method: 'DELETE',
     })
       .then((res) => res.json())
